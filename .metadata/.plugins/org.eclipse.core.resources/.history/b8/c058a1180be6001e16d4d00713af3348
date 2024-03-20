@@ -1,0 +1,17 @@
+package model;
+
+public class LaptopModel {
+	private String ID;
+	private String TenLaptop;
+	private String CPU;
+	private String GPU;
+	private String Ram;
+	private String Rom;
+	private String HeDieuHanh;
+	private String DoPhanGiai;
+	private String Hang;
+	private int Seri;
+	private int NamSanXuat;
+
+	
+}

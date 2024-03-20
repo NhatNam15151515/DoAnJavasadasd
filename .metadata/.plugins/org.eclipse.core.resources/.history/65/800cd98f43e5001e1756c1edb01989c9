@@ -1,0 +1,41 @@
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
+public class test extends JFrame {
+
+    public test() {
+        setTitle("Test");
+        setSize(500, 500);
+        setLocationRelativeTo(null);
+        setLayout(null);
+
+        // Tạo một JPopupMenu
+        JPopupMenu popupMenu = new JPopupMenu("Test");
+        
+        // Tạo các JMenuItem
+        JMenuItem menuItem1 = new JMenuItem("Item 1");
+        JMenuItem menuItem2 = new JMenuItem("Item 2");
+        JMenuItem menuItem3 = new JMenuItem("Item 3");
+        JMenuItem menuItem4 = new JMenuItem("Item 4");
+        
+        // Thêm các JMenuItem vào JPopupMenu
+        popupMenu.add(menuItem1);
+        popupMenu.add(menuItem2);
+        popupMenu.add(menuItem3);
+        popupMenu.add(menuItem4);
+
+        // Sử dụng setLocation() để đặt vị trí hiển thị của JPopupMenu
+        popupMenu.setLocation(200, 200);
+        
+        // Kích thước JFrame để thấy JPopupMenu được hiển thị
+        setSize(700, 700);
+
+        // Hiển thị JPopupMenu
+        popupMenu.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new test().setVisible(true);
+    }
+}

@@ -1,0 +1,21 @@
+package test;
+
+import javax.swing.*;
+public class TableExample {
+	JFrame f;
+	TableExample(){
+	f=new JFrame("Bảng điểm");
+	Object data[][]={ {"Sv01","Nguyen Van An","7.5"}, {"Sv02","Le THi THuong","8.0"}, {"Sv03","Hoang Ha","6.5"}};
+	String column[]={"ID","NAME","MARK"};
+	JTable jt=new JTable(null,column);
+	jt.setBounds(30,40,200,300);
+	JScrollPane sp=new JScrollPane(jt);
+	f.add(sp); f.setSize(300,400);
+	f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	f.setVisible(true); 
+	}
+	
+	public static void main(String[] args) {
+		new TableExample();
+	}
+}

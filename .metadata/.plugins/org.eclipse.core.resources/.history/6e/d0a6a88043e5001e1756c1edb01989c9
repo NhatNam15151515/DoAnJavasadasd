@@ -1,0 +1,46 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
+public class test extends JFrame {
+
+    public test() {
+        setTitle("Test");
+        setSize(500, 500);
+        setLocationRelativeTo(null);
+        setLayout(null);
+
+        JButton button = new JButton("Right Click Me");
+        button.setBounds(200, 200, 150, 30);
+        add(button);
+
+        JPopupMenu popupMenu = new JPopupMenu("Test");
+        JMenuItem menuItem1 = new JMenuItem("Item 1");
+        JMenuItem menuItem2 = new JMenuItem("Item 2");
+        JMenuItem menuItem3 = new JMenuItem("Item 3");
+        JMenuItem menuItem4 = new JMenuItem("Item 4");
+        popupMenu.add(menuItem1);
+        popupMenu.add(menuItem2);
+        popupMenu.add(menuItem3);
+        popupMenu.add(menuItem4);
+
+        button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                if (evt.isPopupTrigger()) {
+                    popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+                }
+            }
+
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                if (evt.isPopupTrigger()) {
+                    popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+                }
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new test().setVisible(true);
+    }
+}

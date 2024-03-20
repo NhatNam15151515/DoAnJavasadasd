@@ -1,0 +1,18 @@
+package test;
+
+import javax.swing.JFrame;
+
+public class test extends JFrame{
+
+	public test() {
+		this.setTitle("ádasdf");
+		this.setSize(500,500);
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	};
+	
+	public static void main(String[] args) {
+		new test();
+	}
+	
+}

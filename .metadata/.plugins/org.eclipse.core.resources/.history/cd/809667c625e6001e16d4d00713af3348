@@ -1,0 +1,69 @@
+package test;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class HighlightedLabels extends JFrame {
+    private JLabel lastClickedLabel;
+
+    public HighlightedLabels() {
+        setTitle("Highlighted Labels");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        // Tạo một số JLabel để thử nghiệm
+        JLabel label1 = createLabel("Label 1");
+        JLabel label2 = createLabel("Label 2");
+        JLabel label3 = createLabel("Label 3");
+
+        // Thêm sự kiện mouse listener cho từng JLabel
+        label1.addMouseListener(new LabelMouseListener());
+        label2.addMouseListener(new LabelMouseListener());
+        label3.addMouseListener(new LabelMouseListener());
+
+        // Thêm các JLabel vào frame
+        add(label1);
+        add(label2);
+        add(label3);
+
+        pack();
+        setVisible(true);
+    }
+
+    // Phương thức tạo một JLabel với độ trong suốt mặc định
+    private JLabel createLabel(String text) {
+        JLabel label = new JLabel(text);
+        label.setOpaque(true);
+        label.setBackground(Color.WHITE); // Đặt màu nền mặc định
+        return label;
+    }
+
+    // Lớp lắng nghe sự kiện chuột
+    private class LabelMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JLabel clickedLabel = (JLabel) e.getSource();
+
+            // Nếu có JLabel được nhấn trước đó, đặt lại độ trong suốt và màu sắc bình thường
+            if (lastClickedLabel != null) {
+                lastClickedLabel.setOpaque(true);
+                lastClickedLabel.setBackground(Color.WHITE);
+                lastClickedLabel.setForeground(Color.BLACK);
+            }
+
+            // Đặt độ trong suốt và màu sắc mới cho JLabel vừa được nhấn
+            clickedLabel.setOpaque(true);
+            clickedLabel.setBackground(new Color(255, 255, 255, 200)); // Màu nền có độ trong suốt
+            clickedLabel.setForeground(Color.GRAY);
+
+            // Cập nhật lastClickedLabel
+            lastClickedLabel = clickedLabel;
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(HighlightedLabels::new);
+    }
+}

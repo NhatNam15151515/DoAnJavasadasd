@@ -1,0 +1,206 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.UIManager;
+import javax.swing.JMenuBar;
+import javax.swing.JTable;
+import javax.swing.Icon;
+import javax.swing.table.DefaultTableModel;
+
+public class mainView extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JTable table;
+	private JTable table_1;
+	
+
+	
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			new mainView();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	public mainView() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(1300,800);
+		this.setLocationRelativeTo(null);
+		this.setTitle("màn hình chính");
+		getContentPane().setLayout(null);
+		
+		JPanel panel_menu = new JPanel();
+		panel_menu.setBounds(0, 0, 197, 763);
+		panel_menu.setBackground(new Color(0, 128, 192));
+		getContentPane().add(panel_menu);
+		panel_menu.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Hi !");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblNewLabel.setBounds(66, 20, 36, 24);
+		panel_menu.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Admin");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(52, 51, 68, 24);
+		panel_menu.add(lblNewLabel_1);
+		
+		JLabel jlabel_sanpham = new JLabel("Sản phẩm");
+		jlabel_sanpham.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_sanpham.setForeground(new Color(255, 255, 255));
+		jlabel_sanpham.setBounds(52, 123, 96, 37);
+		panel_menu.add(jlabel_sanpham);
+		ImageIcon icon_sanpham = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\product.png");
+		JLabel jlabel_imgSanPham = new JLabel(icon_sanpham);
+		jlabel_imgSanPham.setBounds(10, 123, 45, 37);
+		panel_menu.add(jlabel_imgSanPham);
+		
+		JLabel jlabel_nhacungcap = new JLabel("Nhà cung cấp");
+		jlabel_nhacungcap.setForeground(Color.WHITE);
+		jlabel_nhacungcap.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_nhacungcap.setBounds(52, 170, 146, 37);
+		panel_menu.add(jlabel_nhacungcap);
+		ImageIcon icon_nhaCungCap = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\supplier.png");
+		JLabel jlabel_icon_nhacungcap = new JLabel(icon_nhaCungCap);
+		jlabel_icon_nhacungcap.setBounds(10, 170, 45, 37);
+		panel_menu.add(jlabel_icon_nhacungcap);
+		
+		
+		JLabel jlabel_nhaphang = new JLabel("Nhập hàng");
+		jlabel_nhaphang.setForeground(Color.WHITE);
+		jlabel_nhaphang.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_nhaphang.setBounds(52, 217, 114, 37);
+		panel_menu.add(jlabel_nhaphang);
+		ImageIcon icon_nhaphang = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\nhaphang.png");
+		JLabel jlabel_icon_nhaphang = new JLabel(icon_nhaphang);
+		jlabel_icon_nhaphang.setBounds(10, 217, 45, 37);
+		panel_menu.add(jlabel_icon_nhaphang);
+		
+		JLabel jlabel_phieunhap = new JLabel("Phiếu nhập");
+		jlabel_phieunhap.setForeground(Color.WHITE);
+		jlabel_phieunhap.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_phieunhap.setBounds(52, 258, 122, 37);
+		panel_menu.add(jlabel_phieunhap);
+		ImageIcon icon_phieunhap = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\phieunhap.png");
+		JLabel jlabel_icon_phieunhap = new JLabel(icon_phieunhap);
+		jlabel_icon_phieunhap.setBounds(10, 258, 45, 37);
+		panel_menu.add(jlabel_icon_phieunhap);
+		
+		
+		
+		JLabel jlabel_xuathang = new JLabel("Xuất hàng");
+		jlabel_xuathang.setForeground(Color.WHITE);
+		jlabel_xuathang.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_xuathang.setBounds(52, 305, 96, 37);
+		panel_menu.add(jlabel_xuathang);
+		ImageIcon icon_xuathang = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\xuathang.png");
+		JLabel jlabel_icon_xuathang = new JLabel(icon_xuathang);
+		jlabel_icon_xuathang.setBounds(10, 305, 45, 37);
+		panel_menu.add(jlabel_icon_xuathang);
+		
+		JLabel jlabel_phieuxuat = new JLabel("Phiếu xuất");
+		jlabel_phieuxuat.setForeground(Color.WHITE);
+		jlabel_phieuxuat.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_phieuxuat.setBounds(52, 359, 122, 37);
+		panel_menu.add(jlabel_phieuxuat);
+		ImageIcon icon_phieuxuat = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\phieuxuat.png");
+		JLabel jlabel_icon_phieuxuat = new JLabel(icon_phieuxuat);
+		jlabel_icon_phieuxuat.setBounds(10, 359, 45, 37);
+		panel_menu.add(jlabel_icon_phieuxuat);
+		
+		JLabel jlabel_tonkho = new JLabel("Tồn kho");
+		jlabel_tonkho.setForeground(Color.WHITE);
+		jlabel_tonkho.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_tonkho.setBounds(52, 406, 122, 37);
+		panel_menu.add(jlabel_tonkho);
+		ImageIcon icon_tonkho = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\tonkho.png");
+		JLabel jlabel_icon_tonkho = new JLabel(icon_tonkho);
+		jlabel_icon_tonkho.setBounds(10, 406, 45, 37);
+		panel_menu.add(jlabel_icon_tonkho);
+		
+		JLabel jlabel_taikhoan = new JLabel("Tài khoản");
+		jlabel_taikhoan.setForeground(Color.WHITE);
+		jlabel_taikhoan.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_taikhoan.setBounds(52, 453, 122, 37);
+		panel_menu.add(jlabel_taikhoan);
+		ImageIcon icon_taikhoan = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\taikhoan.png");
+		JLabel jlabel_icon_taikhoan = new JLabel(icon_taikhoan);
+		jlabel_icon_taikhoan.setBounds(10, 453, 45, 37);
+		panel_menu.add(jlabel_icon_taikhoan);
+		
+		
+		JLabel jlabel_thongke = new JLabel("Thống kê");
+		jlabel_thongke.setForeground(Color.WHITE);
+		jlabel_thongke.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_thongke.setBounds(52, 500, 122, 37);
+		panel_menu.add(jlabel_thongke);
+		ImageIcon icon_thongke = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\thongke.png");
+		JLabel jlabel_icon_thongke = new JLabel(icon_thongke);
+		jlabel_icon_thongke.setBounds(10, 500, 45, 37);
+		panel_menu.add(jlabel_icon_thongke);
+		
+		JLabel jlabel_đổiThongtin = new JLabel("Đổi thông tin");
+		jlabel_đổiThongtin.setForeground(Color.WHITE);
+		jlabel_đổiThongtin.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_đổiThongtin.setBounds(52, 641, 122, 37);
+		panel_menu.add(jlabel_đổiThongtin);
+		ImageIcon icon_doithongtin = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\thongtin.png");
+		JLabel jlabel_icon_doithontin = new JLabel(icon_doithongtin);
+		jlabel_icon_doithontin.setBounds(10, 641, 45, 37);
+		panel_menu.add(jlabel_icon_doithontin);
+		
+		JLabel jlabel_dangxuat = new JLabel("Đăng xuất");
+		jlabel_dangxuat.setForeground(Color.WHITE);
+		jlabel_dangxuat.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_dangxuat.setBounds(52, 688, 122, 37);
+		panel_menu.add(jlabel_dangxuat);
+		ImageIcon icon_dangxuat = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\dangxuat.png");
+		JLabel jlabel_icon_dangxuat = new JLabel(icon_dangxuat);
+		jlabel_icon_dangxuat.setBounds(10, 688, 45, 37);
+		panel_menu.add(jlabel_icon_dangxuat);
+		
+		String column[] = new String[] {"ID", "New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column"};
+		Object data [][] = new Object[][] {
+			{null, null, null, null, null, null, null, null, null, null},
+			{null, null, null, null, null, null, null, null, null, null},
+			{null, null, null, null, null, null, null, null, null, null},
+			{null, null, null, null, null, null, null, null, null, null},
+			{null, null, null, null, null, null, null, null, null, null},
+			{null, null, null, null, null, null, null, null, null, null},
+		};
+		
+		JTable jt = new JTable(data, column);
+		JScrollPane sp=new JScrollPane(jt);
+		sp.setBounds(0, 0, 1079, 149);
+		jt.setFont(new Font("Arial", Font.PLAIN, 20));
+		jt.setBounds(207, 173, 1069, 181);
+		
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(207, 126, 1069, 637);
+		panel.setLayout(null);
+		panel.add(sp);
+		getContentPane().add(panel);
+		
+		
+		
+		
+		this.setVisible(true);
+	}
+}

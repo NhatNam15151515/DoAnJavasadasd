@@ -1,0 +1,9 @@
+package test;
+
+import javax.swing.JFrame;
+
+public class JPopupMenuExam1 extends JFrame
+{
+	this.setTitle("àas");
+	
+}

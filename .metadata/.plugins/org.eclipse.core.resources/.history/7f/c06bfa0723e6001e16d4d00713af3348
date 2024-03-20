@@ -1,0 +1,32 @@
+package controller;
+
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+
+public class LabelMouseListener extends MouseAdapter {
+    private Object lastClickedLabel;
+
+	@Override
+    public void mouseClicked(MouseEvent e) {
+        JLabel clickedLabel = (JLabel) e.getSource();
+
+        // Nếu có JLabel được nhấn trước đó, đặt lại độ trong suốt và màu sắc bình thường
+        if (lastClickedLabel != null) {
+            ((JComponent) lastClickedLabel).setOpaque(true);
+            ((JComponent) lastClickedLabel).setBackground(Color.WHITE);
+            ((JComponent) lastClickedLabel).setForeground(Color.BLACK);
+        }
+
+        // Đặt độ trong suốt và màu sắc mới cho JLabel vừa được nhấn
+        clickedLabel.setOpaque(true);
+        clickedLabel.setBackground(new Color(255, 255, 255, 200)); // Màu nền có độ trong suốt
+        clickedLabel.setForeground(Color.GRAY);
+
+        // Cập nhật lastClickedLabel
+        lastClickedLabel = clickedLabel;
+    }
+}
