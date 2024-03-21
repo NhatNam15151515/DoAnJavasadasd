@@ -23,6 +23,18 @@ import javax.swing.JButton;
 public class mainView extends JFrame {
 	private JTextField textField;
 	
+
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			new mainView();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	 
 	public mainView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1400,800);
