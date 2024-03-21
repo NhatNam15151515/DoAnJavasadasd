@@ -116,13 +116,13 @@ public class mainView extends JFrame {
 		panel_menu.add(jlabel_phieuxuat);
 		
 		
-		JLabel jlabel_cuahang = new JLabel("Cửa hàng");
-		jlabel_cuahang.setForeground(Color.WHITE);
-		jlabel_cuahang.setFont(new Font("Arial", Font.PLAIN, 20));
-		jlabel_cuahang.setBounds(26, 440, 148, 37);
-		ImageIcon icon_cuahang = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\store.png");
-		jlabel_cuahang.setIcon(icon_cuahang);
-		panel_menu.add(jlabel_cuahang);
+		JLabel jlabel_tonkho = new JLabel("Tồn kho");
+		jlabel_tonkho.setForeground(Color.WHITE);
+		jlabel_tonkho.setFont(new Font("Arial", Font.PLAIN, 20));
+		jlabel_tonkho.setBounds(26, 440, 148, 37);
+		ImageIcon icon_tonkho = new ImageIcon("G:\\My Drive\\DoAnJava\\QuanLyKhoHangLaptop\\src\\img\\tonkho.png");
+		jlabel_tonkho.setIcon(icon_tonkho);
+		panel_menu.add(jlabel_tonkho);
 		
 		
 		JLabel jlabel_taikhoan = new JLabel("Tài khoản");
@@ -296,7 +296,7 @@ public class mainView extends JFrame {
 	        LabelController.addMouseListener(jlabel_phieunhap);
 	        LabelController.addMouseListener(jlabel_xuathang);
 	        LabelController.addMouseListener(jlabel_phieuxuat);
-	        LabelController.addMouseListener(jlabel_cuahang);
+	        LabelController.addMouseListener(jlabel_tonkho);
 	        LabelController.addMouseListener(jlabel_taikhoan);
 	        LabelController.addMouseListener(jlabel_thongke);
 	        LabelController.addMouseListener(jlabel_đổiThongtin);
