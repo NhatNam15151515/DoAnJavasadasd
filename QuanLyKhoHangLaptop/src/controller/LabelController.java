@@ -10,7 +10,7 @@ import view.PhieuXuat;
 
 public class LabelController {
 	private static JLabel lastClickedLabel;
-	private static PhieuXuat PhieuXuat = new PhieuXuat();
+	private static PhieuXuat PhieuXuat;
 
 	public static void addMouseListener(JLabel label) {
 		label.addMouseListener(new MouseAdapter() {
@@ -30,10 +30,13 @@ public class LabelController {
 				clickedLabel.setBackground(Color.GRAY);
 				//thêm nhập xuất
 				if (clickedLabel.getText() == "Phiếu nhập") {
+					PhieuXuat = new PhieuXuat();
 					PhieuXuat.ChangeInformationToPhieuNhap();
 					PhieuXuat.setVisible(true);
 				}
 				if (clickedLabel.getText() == "Phiếu xuất") {
+					PhieuXuat = new PhieuXuat();
+					PhieuXuat.ChangeInformationToPhieuXuat();
 					PhieuXuat.setVisible(true);
 				}
 				// Cập nhật lastClickedLabel

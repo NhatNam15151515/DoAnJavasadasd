@@ -312,17 +312,25 @@ public class PhieuXuat extends JFrame {
 		Label_Tittle_PhieuXuat.setText("PHIẾU NHẬP HÀNG");
 
 		Label_CH_Title_TenCH.setText("Tên NCC:");
-		Label_CH_Title_TenCH
-				.setPreferredSize(new Dimension(Label_CH_Title_TenCH.getWidth() + 1, Label_CH_Title_TenCH.getHeight()));
-		Label_CH_Content_TenCH.setBounds(Label_CH_Content_TenCH.getX() + 7, Label_CH_Content_TenCH.getY(),
-				Label_CH_Content_TenCH.getWidth() - 3, Label_CH_Content_TenCH.getHeight());
-
+		Label_CH_Title_TenCH.setBounds(10, 10, 54, 13);
+		Label_CH_Content_TenCH.setBounds(63, 6, 179, 20);
 		Label_CH_Title_MaCH.setText("Mã NCC:");
-		Label_CH_Title_MaCH
-				.setPreferredSize(new Dimension(Label_CH_Title_MaCH.getWidth() + 1, Label_CH_Title_MaCH.getHeight()));
-		Label_CH_Content_MaCH.setBounds(Label_CH_Content_MaCH.getX() + 7, Label_CH_Content_MaCH.getY(),
-				Label_CH_Content_MaCH.getWidth() - 3, Label_CH_Content_MaCH.getHeight());
 
+		Label_CH_Title_MaCH.setBounds(10, 30, 54, 14);
+		Label_CH_Content_MaCH.setBounds(60, 27, 179, 20);
 		Label_CH_KyTen_Title_DaiDienCH.setText("Đại Diện Nhà Cung Cấp");
+	}
+	public void ChangeInformationToPhieuXuat() {
+		Label_Tittle_PhieuXuat.setText("PHIẾU XUẤT HÀNG");
+
+		Label_CH_Title_TenCH.setText("Tên CH:");
+		Label_CH_Title_TenCH.setBounds(10, 10, 53, 13);
+		Label_CH_Content_TenCH.setBounds(56, 6, 182, 20);
+		
+		Label_CH_Title_MaCH.setText("Mã CH:");
+		Label_CH_Title_MaCH.setBounds(10, 30, 53, 14);
+		Label_CH_Content_MaCH.setBounds(52, 27, 182, 20);
+
+		Label_CH_KyTen_Title_DaiDienCH.setText("Đại Diện Cửa Hàng");
 	}
 }
