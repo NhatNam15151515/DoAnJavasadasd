@@ -1,8 +1,6 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -78,7 +76,7 @@ public class PhieuXuat extends JFrame {
 	
 	public PhieuXuat() {
 		this.setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 840, 730);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
@@ -223,7 +221,7 @@ public class PhieuXuat extends JFrame {
 
 		panel_DanhSachSP = new JPanel();
 		panel_DanhSachSP.setBackground(new Color(255, 255, 255));
-		panel_DanhSachSP.setBounds(10, 219, 804, 274);
+		panel_DanhSachSP.setBounds(10, 220, 804, 274);
 		contentPane.add(panel_DanhSachSP);
 		panel_DanhSachSP.setLayout(null);
 
